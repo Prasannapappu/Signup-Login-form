@@ -1,0 +1,10 @@
+/* Error msg  */
+.validation-required {
+  @apply text-error text-[9px];
+}
+.form-error-msg {
+  @apply mt-2 text-left text-sm text-error;
+}
+.form-error-msg p {
+  @apply text-error;
+}
