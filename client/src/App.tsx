@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import shop from "./assets/image/istockphoto-1170920072-612x612.jpg";
 import "./App.css";
+import axios from "axios";
 
 const message = () => {
   return (
@@ -73,8 +74,16 @@ function App() {
       mobileNumber: "",
     },
     validationSchema,
-    onSubmit(values, { resetForm }) {
-      console.log(values);
+    async onSubmit(values, { resetForm }) {
+      try {
+        const response = await axios.post(
+          "https://localhost:8080/signup/create/signup",
+          values
+        );
+        console.log("Response:", response);
+      } catch (error) {
+        console.error("Error:", error);
+      }
 
       resetForm();
     },
