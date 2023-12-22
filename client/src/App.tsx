@@ -77,7 +77,7 @@ function App() {
     async onSubmit(values, { resetForm }) {
       try {
         const response = await axios.post(
-          "https://localhost:8080/signup/create/signup",
+          "http://localhost:8080/signup/create/signup",
           values
         );
         console.log("Response:", response);
